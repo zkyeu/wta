@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-frame {
+  width: 200px;
+  background: #e2e5e4;
+}
+.main-frame .logo {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  margin-left: 40px;
+}
+.main-frame .logo img {
+  height: 32px;
+}
+
+.operate-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.operate-area li {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  /* background: #ddd; */
+}
+.operate-area li label {
+  width: 80px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.operate-area .turnset {
+  width: 30px;
+  height: 14px;
+  background: #ccc;
+  border-radius: 13px;
+  padding: 2px;
+  cursor: pointer;
+}
+.operate-area .turnset span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 8px;
+  background: #fff;
+}
+.turnset.on {
+  background: #13ce66;
+}
+.turnset.on span {
+  margin-left: 16px;
+}
+
+.footer {
+  background: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #ddd;
+}
+#getimg {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  margin: 10px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.colorful {
+  margin-left: 10px;
+  letter-spacing: 6px;
+  font-weight: 600;
+  font-size: 28px;
+  background: -webkit-linear-gradient(45deg, #1adde7, #e6672c, #dfc234, #5020e2, #1b76f5);
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: ran 16s linear infinite;
+}
+
+@keyframes ran {
+  from {
+    backgroud-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}

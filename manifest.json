@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "WTA",
+  "version": "0.0.1",
+  "description": "更方便get core信息，让无用的things Disappear.",
+  "author": "zkyeu@163.com",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens wta.html"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting", "debugger"],
+  "action": {
+    "default_popup": "wta.html",
+    "default_icon": {
+      "16": "/imgs/img16.png",
+      "32": "/imgs/img32.png",
+      "48": "/imgs/img48.png",
+      "128": "/imgs/img128.png"
+    }
+  },
+  "icons": {
+    "16": "/imgs/img16.png",
+    "32": "/imgs/img32.png",
+    "48": "/imgs/img48.png",
+    "128": "/imgs/img128.png"
+  },
+  "options_page": "options.html"
+}
