@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2022-03-04 14:54:02
- * @LastEditTime: 2022-03-04 20:56:02
+ * @LastEditTime: 2022-03-07 16:15:08
  * @LastEditors: Please set LastEditors
  * @Description: set diy。为什么传递参数导致设置不起作用，很尴尬，多写一遍code
  * @FilePath: /chromeplugin/popup.js
@@ -9,7 +9,7 @@
 
 let hideImg = document.getElementById('hideImg');
 let darkModle = document.getElementById('darkModle');
-let domBody = document.body;
+let fontHide = document.getElementById('fontHide');
 
 // 图片隐藏
 hideImg.addEventListener('click', async () => {
@@ -63,7 +63,6 @@ function imgHide() {
 
 function showHide() {
   let imgArr = document.getElementsByTagName('img');
-  // let str = v === 1 ? 'none' : 'block';
   if (imgArr.length) {
     for (let i = 0; i < imgArr.length; i++) {
       imgArr[i].style.display = 'block';
@@ -92,14 +91,30 @@ function darkBack() {
   }
 }
 
-domBody.addEventListener('click', async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: dom
-  });
-});
+fontHide.addEventListener(
+  'click',
+  async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      function: getFontDom
+    });
+  },
+  false
+);
 
-function dom(e) {
-  console.log(e.target);
+function getFontDom() {
+  const domList = document.body.getElementsByTagName('*');
+  let tagArr = ['script', 'img', 'style', 'link']; // 排除设置样式的标签
+  for (let i = 0; i < domList.length; i++) {
+    if (tagArr.indexOf(domList[i].tagName.toLowerCase()) < 0) {
+      let prop = window.getComputedStyle(domList[i], null).getPropertyValue('font-size');
+      // TODO 怎么搞成活的字号
+      if (prop && parseInt(prop) > 16) {
+        domList[i].style.visibility = 'hidden';
+      } else {
+        domList[i].style.visibility = 'initial';
+      }
+    }
+  }
 }

@@ -31,15 +31,28 @@
   display: flex;
   align-items: center;
   padding: 8px 16px;
-  /* background: #ddd; */
+  position: relative;
 }
 .operate-area li label {
   width: 80px;
   font-size: 14px;
   font-weight: 400;
 }
+.operate-area li #fontHide {
+  width: 34px;
+  border: none;
+  outline: none;
+}
+.operate-area li .condition {
+  position: absolute;
+  left: 82px;
+}
+.operate-area li .danwei {
+  position: absolute;
+  right: 0;
+}
 .operate-area .turnset {
-  width: 30px;
+  width: 34px;
   height: 14px;
   background: #ccc;
   border-radius: 13px;
@@ -57,7 +70,7 @@
   background: #13ce66;
 }
 .turnset.on span {
-  margin-left: 16px;
+  margin-left: 20px;
 }
 
 .footer {

@@ -16,7 +16,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting", "debugger"],
+  "permissions": [ "activeTab", "scripting"],
   "action": {
     "default_popup": "wta.html",
     "default_icon": {
