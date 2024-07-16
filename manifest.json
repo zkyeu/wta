@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WTA",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "更方便get core信息，让无用的things Disappear.",
   "author": "zkyeu@163.com",
   "commands": {

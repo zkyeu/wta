@@ -1,11 +1,12 @@
 /*
- * @Author: your name
+ * @Author: liliang
  * @Date: 2022-03-04 15:01:41
- * @LastEditTime: 2022-03-04 15:01:41
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /chromeplugin/options.js
+ * @LastEditors: liliang
+ * @LastEditTime: 2022-04-02 09:57:38
+ * @FilePath: /wta/options.js
+ * @Description:
  */
+
 let page = document.getElementById('buttonDiv');
 let selectedClassName = 'current';
 const presetButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1'];

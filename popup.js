@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2022-03-04 14:54:02
- * @LastEditTime: 2022-03-07 16:15:08
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-04-02 10:22:56
+ * @LastEditors: liliang
  * @Description: set diy。为什么传递参数导致设置不起作用，很尴尬，多写一遍code
- * @FilePath: /chromeplugin/popup.js
+ * @FilePath: /wta/popup.js
  */
 
 let hideImg = document.getElementById('hideImg');
@@ -69,10 +69,18 @@ function showHide() {
     }
   }
 }
+// 颜色转换
+// function rgbToHex(r, g, b) {
+//   return ((r << 16) | (g << 8) | b).toString(16);
+// }
 
 // 暗黑模式逻辑
 function darkSet() {
-  document.body.style = 'filter:invert(1)hue-rotate(180deg);transition: color 300ms, background-color 300ms';
+  // let bodyDom = document.body;
+  // let domIntiBg = window.getComputedStyle(bodyDom).getPropertyValue('background-color');
+
+  document.body.style =
+    'background-color:#0F0F0F;filter:invert(1)hue-rotate(180deg);transition: color 300ms, background-color 300ms';
   let imgArr = document.getElementsByTagName('img');
   if (imgArr.length) {
     for (let i = 0; i < imgArr.length; i++) {
@@ -103,18 +111,18 @@ fontHide.addEventListener(
   false
 );
 
-function getFontDom() {
-  const domList = document.body.getElementsByTagName('*');
-  let tagArr = ['script', 'img', 'style', 'link']; // 排除设置样式的标签
-  for (let i = 0; i < domList.length; i++) {
-    if (tagArr.indexOf(domList[i].tagName.toLowerCase()) < 0) {
-      let prop = window.getComputedStyle(domList[i], null).getPropertyValue('font-size');
-      // TODO 怎么搞成活的字号
-      if (prop && parseInt(prop) > 16) {
-        domList[i].style.visibility = 'hidden';
-      } else {
-        domList[i].style.visibility = 'initial';
-      }
-    }
-  }
-}
+// function getFontDom() {
+//   const domList = document.body.getElementsByTagName('*');
+//   let tagArr = ['script', 'img', 'style', 'link']; // 排除设置样式的标签
+//   for (let i = 0; i < domList.length; i++) {
+//     if (tagArr.indexOf(domList[i].tagName.toLowerCase()) < 0) {
+//       let prop = window.getComputedStyle(domList[i], null).getPropertyValue('font-size');
+//       // TODO 怎么搞成活的字号
+//       if (prop && parseInt(prop) > 16) {
+//         domList[i].style.visibility = 'hidden';
+//       } else {
+//         domList[i].style.visibility = 'initial';
+//       }
+//     }
+//   }
+// }
